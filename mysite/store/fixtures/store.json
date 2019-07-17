@@ -1,0 +1,60 @@
+[
+{
+  "model": "store.brand",
+  "pk": 1,
+  "fields": {
+    "brand_name": "Ugreen"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 2,
+  "fields": {
+    "brand_name": "Adisputent"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 3,
+  "fields": {
+    "brand_name": "VBESTLIFE"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 4,
+  "fields": {
+    "brand_name": "GOMU"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "product_name": "Messenger Men Bag",
+    "pub_date": "2019-07-08T04:31:02Z",
+    "brand": 2,
+    "description": ""
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "product_name": "30x25 HD Optical Monocular",
+    "pub_date": "2019-07-08T04:32:50Z",
+    "brand": 3,
+    "description": "Magnification: approx.7~10X"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "product_name": "13x50 Monocular",
+    "pub_date": "2019-07-08T04:35:33Z",
+    "brand": 4,
+    "description": "114m/1000m"
+  }
+}
+]
