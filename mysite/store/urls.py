@@ -1,12 +1,15 @@
-from django.urls import path, include
+#from django.urls import path, include
+from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from store import views
+from .store_api import BrandViewSet, ProductViewSet
+from . import views
 
 router = DefaultRouter()
-router.register(r'brands', views.BrandViewSet)
-router.register(r'products', views.ProductViewSet)
+router.register(r'brands', BrandViewSet)
+router.register(r'products', ProductViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    url(r'^$', views.index, name='index'),
+    url(r'^api/', include(router.urls)),
 ]
 
