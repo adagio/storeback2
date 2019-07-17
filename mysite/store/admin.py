@@ -3,6 +3,7 @@ from django.contrib.admin import AdminSite
 
 from .models import Brand
 from .models import Product
+from .models import Category
 
 class MyAdminSite(AdminSite):
     site_header = 'Store administration'
@@ -15,7 +16,7 @@ class ProductInline(admin.StackedInline):
     model = Product
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('product_name', 'description', 'brand', 'pub_date')
+    list_display = ('product_name', 'category', 'brand', 'pub_date')
     list_filter = ['pub_date']
     search_fields = ['product_name']
     
@@ -31,6 +32,7 @@ class BrandAdmin(admin.ModelAdmin):
 admin.site.register(Brand, BrandAdmin)
 admin.site.register(Product, ProductAdmin)
 
+admin_site.register(Category)
 admin_site.register(Brand, BrandAdmin)
 admin_site.register(Product, ProductAdmin)
 

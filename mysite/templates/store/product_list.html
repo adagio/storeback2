@@ -1,0 +1,8 @@
+<h1>Aire Acondicionado</h1>
+<ul>
+{% for product in object_list %}
+    <li>{{ product.product_name }} - {{ product.brand }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

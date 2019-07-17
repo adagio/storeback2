@@ -1,6 +1,16 @@
 from django.db import models
 
 
+class Category(models.Model):
+    class Meta:
+        verbose_name_plural = "categories"
+    
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class Brand(models.Model):
     brand_name = models.CharField(max_length=200)
 
@@ -11,8 +21,9 @@ class Brand(models.Model):
 class Product(models.Model):
     product_name = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    description = models.CharField(max_length=200, default='')
+    brand = models.ForeignKey(Brand, blank=True, null=True, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, blank=True, null=True, on_delete=models.CASCADE)
+    description = models.CharField(max_length=200, blank=True, null=True, default='')
 
     def __str__(self):
         return self.product_name
