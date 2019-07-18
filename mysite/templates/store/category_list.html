@@ -1,0 +1,9 @@
+<h1>Categories</h1>
+<ul>
+{% for category in object_list %}
+    <li>
+      <a href="./c/{{category.pk}}">Products</a> | {{ category.name }}</li>
+{% empty %}
+    <li>No categories yet.</li>
+{% endfor %}
+</ul>

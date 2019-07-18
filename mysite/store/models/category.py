@@ -6,6 +6,7 @@ class Category(models.Model):
         verbose_name_plural = "categories"
     
     name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=50, blank=True)
 
     def __str__(self):
         return self.name
